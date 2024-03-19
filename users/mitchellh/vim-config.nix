@@ -25,6 +25,18 @@ endif
 lua <<EOF
 ---------------------------------------------------------------------
 -- Add our custom treesitter parsers
+
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
+vim.g.mapleader = " "
+
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
+vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+
+vim.keymap.set("n", "<leader>gs", ":Neotree float git_status<CR>", {})
+
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
 parser_config.proto = {

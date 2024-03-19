@@ -40,6 +40,14 @@ in {
     pkgs.tree
     pkgs.watch
 
+    (pkgs.python3.withPackages (python-pkgs: [
+      python-pkgs.pandas
+      python-pkgs.numpy
+      python-pkgs.requests
+    ]))
+
+    pkgs.element-desktop
+
     pkgs.gopls
     pkgs.zigpkgs.master
 
@@ -118,6 +126,35 @@ in {
     };
   };
 
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+
+    oh-my-zsh = {
+        enable = true;
+        custom = "$HOME/nixos-config/.oh-my-custom";
+        theme = "agnoster-nix";
+        plugins = [
+            "git"
+            "vi-mode"
+            "docker"
+        ];
+    };
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.8.0";
+          sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
+        };
+      }
+    ];
+  };
+
   programs.direnv= {
     enable = true;
 
@@ -134,7 +171,7 @@ in {
   };
 
   programs.fish = {
-    enable = true;
+    enable = false;
     interactiveShellInit = lib.strings.concatStrings (lib.strings.intersperse "\n" ([
       "source ${sources.theme-bobthefish}/functions/fish_prompt.fish"
       "source ${sources.theme-bobthefish}/functions/fish_right_prompt.fish"
@@ -172,12 +209,12 @@ in {
 
   programs.git = {
     enable = true;
-    userName = "Mitchell Hashimoto";
-    userEmail = "mitchell.hashimoto@gmail.com";
-    signing = {
-      key = "523D5DC389D273BC";
-      signByDefault = true;
-    };
+    userName = "Mohammed Abdul Hafeez";
+    userEmail = "hafeez3000@gmail.com";
+#    signing = {
+#      key = "523D5DC389D273BC";
+#      signByDefault = true;
+#    };
     aliases = {
       cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d";
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
@@ -188,7 +225,7 @@ in {
       color.ui = true;
       core.askPass = ""; # needs to be empty to use terminal for ask pass
       credential.helper = "store"; # want to make this more secure
-      github.user = "mitchellh";
+      github.user = "hafeez3000";
       push.default = "tracking";
       init.defaultBranch = "main";
     };
@@ -287,6 +324,9 @@ in {
       customVim.nvim-treesitter
       customVim.nvim-treesitter-playground
       customVim.nvim-treesitter-textobjects
+      customVim.nvim-web-devicons
+      customVim.nvim-nui
+      customVim.nvim-neo-tree
 
       vimPlugins.vim-airline
       vimPlugins.vim-airline-themes

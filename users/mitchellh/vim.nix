@@ -132,6 +132,21 @@ let sources = import ../../nix/sources.nix; in rec {
       src = sources.nvim-lspinstall;
     };
 
+    nvim-web-devicons = vimUtils.buildVimPlugin {
+      name = "nvim-web-devicons";
+      src = sources.nvim-web-devicons;
+    };
+
+    nvim-nui = vimUtils.buildVimPlugin {
+      name = "nvim-nui";
+      src = sources.nvim-nui;
+    };
+
+    nvim-neo-tree = vimUtils.buildVimPlugin {
+      name = "nvim-neo-tree";
+      src = sources.nvim-neo-tree;
+    };
+
     nvim-treesitter-textobjects = vimUtils.buildVimPlugin {
       name = "nvim-treesitter-textobjects";
       src = sources.nvim-treesitter-textobjects;

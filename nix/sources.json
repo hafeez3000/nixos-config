@@ -382,5 +382,41 @@
         "type": "tarball",
         "url": "https://github.com/ziglang/zig.vim/archive/0c4f965468259ab6e47fd7c6b2127583a8860eb1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-neo-tree": {
+        "branch": "master",
+        "description": "Neo-tree is a Neovim plugin to browse the file system",
+        "homepage": null,
+        "owner": "nvim-neo-tree",
+        "repo": "neo-tree.nvim",
+        "rev": "403a9c5014624dc517b850a360f345340139307c",
+        "sha256": "1jswn07i1x4zzvq7pzjp120mssskpxzni5r69lb198j5yrnzyl0x",
+        "type": "tarball",
+        "url": "https://github.com/nvim-neo-tree/neo-tree.nvim/archive/refs/tags/3.21.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-nui": {
+        "branch": "master",
+        "description": "UI Component Library for Neovim",
+        "homepage": null,
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "rev": "403a9c5014624dc517b850a360f345340139307c",
+        "sha256": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg",
+        "type": "tarball",
+        "url": "https://github.com/MunifTanjim/nui.nvim/archive/refs/tags/0.3.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-web-devicons": {
+        "branch": "master",
+        "description": "Nvim-web-devicons",
+        "homepage": null,
+        "owner": "nvim-tree",
+        "repo": "nvim-web-devicons",
+        "rev": "cb0c967c9723a76ccb1be0cc3a9a10e577d2f6ec",
+        "sha256": "0wbh1aqjnvqjvddkinwbawvgyc80jykxlqy0cgsmrqpdkgbiv7gm",
+        "type": "tarball",
+        "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/refs/tags/v0.99.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

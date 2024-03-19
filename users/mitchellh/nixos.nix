@@ -2,20 +2,23 @@
 
 {
   # https://github.com/nix-community/home-manager/pull/2408
-  environment.pathsToLink = [ "/share/fish" ];
+##  environment.pathsToLink = [ "/share/fish" ];
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # Add ~/.local/bin to PATH
   environment.localBinInPath = true;
 
   # Since we're using fish as our shell
-  programs.fish.enable = true;
+##  programs.fish.enable = true;
+  programs.zsh.enable = true;
 
   users.users.mitchellh = {
     isNormalUser = true;
     home = "/home/mitchellh";
     extraGroups = [ "docker" "wheel" ];
-    shell = pkgs.fish;
-    hashedPassword = "$6$p5nPhz3G6k$6yCK0m3Oglcj4ZkUXwbjrG403LBZkfNwlhgrQAqOospGJXJZ27dI84CbIYBNsTgsoH650C1EBsbCKesSVPSpB1";
+#    shell = pkgs.fish;
+    shell = pkgs.zsh;
+    hashedPassword = "$6$XiDgnxqJleRuiwr2$Qgs2M4EbgoDDXclkAnGf8tPr76SVTO7WdUlGjr8vsEcijHm26EaFsnn1IFFwOHKWq82w4PqEi.dAI5rzrBjPq0";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbTIKIPtrymhvtTvqbU07/e7gyFJqNS4S0xlfrZLOaY mitchellh"
     ];
