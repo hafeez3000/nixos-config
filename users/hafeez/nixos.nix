@@ -12,9 +12,9 @@
 ##  programs.fish.enable = true;
   programs.zsh.enable = true;
 
-  users.users.mitchellh = {
+  users.users.hafeez = {
     isNormalUser = true;
-    home = "/home/mitchellh";
+    home = "/home/hafeez";
     extraGroups = [ "docker" "wheel" ];
 #    shell = pkgs.fish;
     shell = pkgs.zsh;
